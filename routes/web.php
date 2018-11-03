@@ -32,3 +32,5 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 //创建资源路由 只允许show个人页面展示 edit编辑页面 update更新处理
 Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
+
+Route::resource('topics', 'TopicsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
