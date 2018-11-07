@@ -45,8 +45,9 @@ class TopicsController extends Controller
 
 	public function edit(Topic $topic)
 	{
-        $categories = Category::all();
+        
         $this->authorize('update', $topic);
+        $categories = Category::all();
 		return view('topics.create_and_edit', compact('topic', 'categories'));
 	}
 
@@ -65,7 +66,7 @@ class TopicsController extends Controller
 
 		return redirect()->route('topics.index')->with('success', '成功删除！');
 	}
-    
+
     // 上传图片
     public function uploadImage(Request $request, ImageUploadHandler $uploader)
     {
