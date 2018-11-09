@@ -31,6 +31,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Topic::class);
     }
+    public function replies()
+    {
+        return $this->hasMany(Reply::class);
+    }
     //提高代码可读效率 进行封装
     public function isAuthorOf($model)
     {
