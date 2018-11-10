@@ -42,3 +42,5 @@ Route::post('upload_image', 'TopicsController@uploadImage')->name('topics.upload
 Route::get('topics/{topic}/{slug?}', 'TopicsController@show')->name('topics.show');
 //只需要 store 和 destroy 的路由
 Route::resource('replies', 'RepliesController', ['only' => ['store', 'destroy']]);
+//新建消息通知路由入口
+Route::resource('notifications', 'NotificationsController', ['only' => ['index']]);
