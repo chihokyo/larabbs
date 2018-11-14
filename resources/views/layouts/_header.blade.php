@@ -57,6 +57,7 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
+
                             @can('manage_contents')
                                 <li>
                                     <a href="{{ url(config('administrator.uri')) }}">
@@ -65,6 +66,7 @@
                                     </a>
                                 </li>
                             @endcan
+
                             <li>
                                 <a href="{{ route('users.show', Auth::id()) }}">
                                     <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
