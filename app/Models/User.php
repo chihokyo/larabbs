@@ -11,6 +11,7 @@ class User extends Authenticatable
 {
     // laravel-permission 提供的 Trait 
     use HasRoles;
+    use Traits\ActiveUserHelper;
     use Notifiable {
         notify as protected laravelNotify;
     }
