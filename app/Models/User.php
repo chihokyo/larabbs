@@ -19,7 +19,8 @@ class User extends Authenticatable
 
     protected $fillable = [
     'name', 'phone', 'email', 'password', 'introduction', 'avatar',
-    ];
+    'weixin_openid', 'weixin_unionid'
+];
 
     
     protected $hidden = [
