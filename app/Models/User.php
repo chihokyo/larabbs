@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Spatie\Permission\Traits\HasRoles;
 use Auth;
+use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable
+class User extends Authenticatable implements JWTSubject
 {
     // laravel-permission 提供的 Trait 
     use Traits\LastActivedAtHelper;
@@ -79,5 +80,17 @@ class User extends Authenticatable
         }
 
         $this->attributes['avatar'] = $path;
+    }
+
+    // getJWTIdentifier 返回了 User 的 id
+
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+     // getJWTCustomClaims 是我们需要额外再 JWT 载荷中增加的自定义内容，这里返回空数组
+    public function getJWTCustomClaims()
+    {
+        return [];
     }
 }
