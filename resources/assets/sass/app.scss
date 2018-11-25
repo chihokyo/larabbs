@@ -10,7 +10,7 @@ body {
     font-family: Hiragino Sans GB, "Hiragino Sans GB", Helvetica, "Microsoft YaHei", Arial,sans-serif;
 }
 
-/* header 页头 */
+/* header */
 
 .navbar-static-top {
     border-color: #e7e7e7;
@@ -19,9 +19,22 @@ body {
     border-top: 4px solid #00b5ad;
     margin-bottom: 40px;
     margin-top: 0px;
-}
 
-/* Sticky footer styles 页脚固定 */
+    .dropdown-menu {
+        padding: 0px;
+
+        li a {
+            border-bottom: 1px solid #d8d8d8;
+            line-height: 2.4;
+
+            .glyphicon {
+                margin-right: 8px;
+            }
+        }
+    }
+}
+/* Sticky footer styles */
+
 html {
     position: relative;
     min-height: 100% ;
@@ -52,22 +65,7 @@ body {
             }
         }
     }
-
-    .dropdown-menu {
-        padding: 0px;
-
-        li a {
-            border-bottom: 1px solid #d8d8d8;
-            line-height: 2.4;
-
-            .glyphicon {
-                margin-right: 8px;
-            }
-        }
-    }
 }
-
-/* 注册页面 */
 
 /* User register page */
 .register-page {
@@ -78,8 +76,6 @@ body {
     }
 }
 
-
-/* 个人资料图片下留白 */
 /* User profile page */
 .users-show-page {
     .user-info {
@@ -111,17 +107,18 @@ body {
     .pagination {
         margin: 12px 0;
     }
+
     .meta {
         font-size: .9em;
         color: #b3b3b3;
     }
-    .reply-content {
+    .rpely-content {
         margin: 6px 0;
     }
 }
 
 /* Topic Index Page */
-.topics-index-page, .categories-show-page, .root-page{
+.topics-index-page, .categories-show-page, .root-page {
     .topic-list {
         .nav > li > a {
             position: relative;
@@ -166,8 +163,8 @@ body {
             line-height: 38px;
         }
     }
-
 }
+
 .topic-reply {
     hr {
         margin-top: 16px;
@@ -197,6 +194,7 @@ body {
         background-color: #d15b47 !important;;
     }
 }
+
 /* Sidebar */
 
 .sidebar {
