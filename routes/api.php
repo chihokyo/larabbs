@@ -41,6 +41,12 @@ $api->version('v1', [
         // 删除token
         $api->delete('authorizations/current', 'AuthorizationsController@destroy')
         ->name('api.authorizations.destroy');
+        // 话题回复列表
+        $api->get('topics/{topic}/replies', 'RepliesController@index')
+            ->name('api.topics.replies.index');
+        // 某个用户的回复列表
+        $api->get('users/{user}/replies', 'RepliesController@userIndex')
+            ->name('api.users.replies.index');
 
     });
 
@@ -80,6 +86,13 @@ $api->version('v1', [
         // 删除话题
         $api->delete('topics/{topic}', 'TopicsController@destroy')
         ->name('api.topics.destroy');
+        // 某个用户发布的话题
+        $api->get('users/{user}/topics', 'TopicsController@userIndex')
+        ->name('api.users.topics.index');
+        // 话题回复列表
+        $api->get('topics/{topic}/replies', 'RepliesController@index')
+        ->name('api.topics.replies.index');
+
         });
     });
 });
