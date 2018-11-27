@@ -29,13 +29,16 @@ $api->version('v1', [
         // 登录
         $api->post('authorizations', 'AuthorizationsController@store')
         ->name('api.authorizations.store');
-
+        // 发布回复
+        $api->post('topics/{topic}/replies', 'RepliesController@store')
+        ->name('api.topics.replies.store');
         // 刷新token
         $api->put('authorizations/current', 'AuthorizationsController@update')
         ->name('api.authorizations.update');
         // 删除token
         $api->delete('authorizations/current', 'AuthorizationsController@destroy')
         ->name('api.authorizations.destroy');
+
     });
 
     $api->group([
@@ -51,7 +54,7 @@ $api->version('v1', [
         // 话题详情
         $api->get('topics/{topic}', 'TopicsController@show')
         ->name('api.topics.show');
-        
+
         $api->get('users/{user}/topics', 'TopicsController@userIndex')
         ->name('api.users.topics.index');
         // 需要 token 验证的接口
